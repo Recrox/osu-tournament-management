@@ -10,6 +10,7 @@ namespace osu_tournament_management
     {
         /// <summary>
         /// Point d'entrée principal de l'application.
+        /// https://docs.google.com/spreadsheets/d/13kteUCgjTGyzIcc-lImpD9ynfQIo1DHYS2X2_JxeOk4/edit#gid=0
         /// </summary>
         [STAThread]
         static void Main()
@@ -17,6 +18,7 @@ namespace osu_tournament_management
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
+            
         }
     }
 }
