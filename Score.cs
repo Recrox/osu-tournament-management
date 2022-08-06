@@ -2,13 +2,15 @@
 {
     internal class Score
     {
-        private string mod { get; set; }
-        private int point { get; set; }
+        private string mod;
+        private int point;
+        public string Mod { get => mod; set => mod = value; }
+        public int Point { get => point; set => point = value; }
 
         public Score(string mod, int point)
         {
-            this.mod = mod;
-            this.point = point;
+            this.Mod = mod;
+            this.Point = point;
         }
     }
 
