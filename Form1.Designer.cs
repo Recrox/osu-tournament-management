@@ -34,6 +34,7 @@
             this.listBoxScore = new System.Windows.Forms.ListBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button1
@@ -46,27 +47,29 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.AddTeam_Click);
             // 
-            // listBox1
+            // listBoxTeam
             // 
             this.listBoxTeam.FormattingEnabled = true;
             this.listBoxTeam.Location = new System.Drawing.Point(45, 111);
-            this.listBoxTeam.Name = "listBox1";
+            this.listBoxTeam.Name = "listBoxTeam";
             this.listBoxTeam.Size = new System.Drawing.Size(207, 394);
             this.listBoxTeam.TabIndex = 1;
+            this.listBoxTeam.SelectedIndexChanged += new System.EventHandler(this.listBoxTeam_SelectedIndexChanged);
             // 
-            // listBox2
+            // listBoxPlayer
             // 
             this.listBoxPlayer.FormattingEnabled = true;
             this.listBoxPlayer.Location = new System.Drawing.Point(357, 111);
-            this.listBoxPlayer.Name = "listBox2";
+            this.listBoxPlayer.Name = "listBoxPlayer";
             this.listBoxPlayer.Size = new System.Drawing.Size(207, 394);
             this.listBoxPlayer.TabIndex = 2;
+            this.listBoxPlayer.SelectedIndexChanged += new System.EventHandler(this.listBoxPlayer_SelectedIndexChanged);
             // 
-            // listBox3
+            // listBoxScore
             // 
             this.listBoxScore.FormattingEnabled = true;
             this.listBoxScore.Location = new System.Drawing.Point(674, 111);
-            this.listBoxScore.Name = "listBox3";
+            this.listBoxScore.Name = "listBoxScore";
             this.listBoxScore.Size = new System.Drawing.Size(207, 394);
             this.listBoxScore.TabIndex = 3;
             // 
@@ -78,7 +81,7 @@
             this.button2.TabIndex = 4;
             this.button2.Text = "AddPlayer";
             this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.button2.Click += new System.EventHandler(this.AddPlayer_Click);
             // 
             // button3
             // 
@@ -88,13 +91,24 @@
             this.button3.TabIndex = 5;
             this.button3.Text = "AddScore";
             this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.button3.Click += new System.EventHandler(this.AddScore_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Comic Sans MS", 36F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(143, 19);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(712, 68);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Osu Tournament Management";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(984, 661);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.listBoxScore);
@@ -102,8 +116,9 @@
             this.Controls.Add(this.listBoxTeam);
             this.Controls.Add(this.button1);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Osu_tool";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -115,6 +130,7 @@
         private System.Windows.Forms.ListBox listBoxScore;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Label label1;
     }
 }
 
