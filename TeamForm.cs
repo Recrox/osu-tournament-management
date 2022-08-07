@@ -31,6 +31,7 @@ namespace osu_tournament_management
             {
                 this.teams.Add(new Team(textBox1.Text));
             }
+
         }
     }
 }

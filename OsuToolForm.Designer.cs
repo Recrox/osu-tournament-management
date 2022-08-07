@@ -42,6 +42,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.button7 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -170,11 +171,22 @@
             this.label4.TabIndex = 12;
             this.label4.Text = "Score :";
             // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(278, 626);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(395, 23);
+            this.button7.TabIndex = 13;
+            this.button7.Text = "Refresh ALL";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.Refresh_Click);
+            // 
             // OsuToolForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(984, 661);
+            this.Controls.Add(this.button7);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -211,6 +223,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button button7;
     }
 }
 

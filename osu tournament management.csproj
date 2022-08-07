@@ -46,11 +46,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddDataForm.cs">
+    <Compile Include="AddScoreForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddDataForm.Designer.cs">
-      <DependentUpon>AddDataForm.cs</DependentUpon>
+    <Compile Include="AddScoreForm.Designer.cs">
+      <DependentUpon>AddScoreForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PlayerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PlayerForm.Designer.cs">
+      <DependentUpon>PlayerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TeamForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TeamForm.Designer.cs">
+      <DependentUpon>TeamForm.cs</DependentUpon>
     </Compile>
     <Compile Include="OsuToolForm.cs">
       <SubType>Form</SubType>
@@ -63,8 +75,14 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Score.cs" />
     <Compile Include="Team.cs" />
-    <EmbeddedResource Include="AddDataForm.resx">
-      <DependentUpon>AddDataForm.cs</DependentUpon>
+    <EmbeddedResource Include="AddScoreForm.resx">
+      <DependentUpon>AddScoreForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlayerForm.resx">
+      <DependentUpon>PlayerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TeamForm.resx">
+      <DependentUpon>TeamForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OsuToolForm.resx">
       <DependentUpon>OsuToolForm.cs</DependentUpon>

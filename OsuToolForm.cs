@@ -18,7 +18,7 @@ namespace osu_tournament_management
             InitializeComponent();
 
             Teams = new List<Team>();
-            FillModel();
+            //FillModel();
             ShowTeams();
 
         }
@@ -31,7 +31,7 @@ namespace osu_tournament_management
                 for (int j = 0; j < 3; j++)
                 {
                     Teams[i].AddPlayer("Joueur num " + j + " " + i);
-                    for (int k = 0; k < 10; k++)
+                    for (int k = 0; k < 5; k++)
                     {
                         Teams[i].Players[j].AddScore("NM" + k + " |", k * 100000);
                     }
@@ -61,16 +61,18 @@ namespace osu_tournament_management
         }
         public void AddTeam_Click(object sender, EventArgs e)
         {
-            new AddTeamForm(this.Teams).ShowDialog();
+            new AddTeamForm(this.Teams).Show();
         }
 
         private void AddPlayer_Click(object sender, EventArgs e)
         {
-            new AddTeamForm().ShowDialog();
+            if(listBoxTeam.SelectedItem != null)
+                new AddPlayerForm(getTeamSelected().Players).Show();
         }
         private void AddScore_Click(object sender, EventArgs e)
         {
-            new AddTeamForm().ShowDialog();
+            if (listBoxPlayer.SelectedItem != null)
+                new AddScoreForm(getPlayerSelected().Scores).Show();
         }
 
         private void listBoxTeam_SelectedValueChanged(object sender, EventArgs e)
@@ -111,23 +113,33 @@ namespace osu_tournament_management
         private void DeleteTeam_Click(object sender, EventArgs e)
         {
             if (listBoxTeam.SelectedItem != null)
+            {
                 this.Teams.RemoveAt(listBoxTeam.SelectedIndex);
                 ShowTeams();
+            }
         }
 
         private void DeletePlayer_Click(object sender, EventArgs e)
         {
             if (listBoxPlayer.SelectedItem != null)
+            {
                 getTeamSelected().Players.RemoveAt(listBoxPlayer.SelectedIndex);
                 showPlayerOfTheTeamSelect();
-
+            }
         }
 
         private void DeleteScore_Click(object sender, EventArgs e)
         {
             if (listBoxScore.SelectedItem != null)
+            {
                 getPlayerSelected().Scores.RemoveAt(listBoxScore.SelectedIndex);
                 showScoreOfThePlayerSelect();
+            }       
+        }
+
+        private void Refresh_Click(object sender, EventArgs e)
+        {
+            ShowTeams();
         }
     }
 }
