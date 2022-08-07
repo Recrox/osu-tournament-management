@@ -45,8 +45,9 @@ namespace osu_tournament_management
                 listBoxTeam.Items.Add(team.Name);
             }
 
-            listBoxTeam_SelectedIndexChanged(null, null);
-            listBoxPlayer_SelectedIndexChanged(null, null);
+            listBoxTeam_SelectedValueChanged(null, null);
+            listBoxPlayer_SelectedValueChanged(null, null);
+
         }
 
         
@@ -58,33 +59,6 @@ namespace osu_tournament_management
         {
             return getTeamSelected().Players.ElementAt(listBoxPlayer.SelectedIndex);
         }
-
-        private void listBoxTeam_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if(listBoxTeam.SelectedItem != null)
-            {
-                listBoxPlayer.Items.Clear();
-                foreach (Player player in getTeamSelected().Players)
-                {
-                    listBoxPlayer.Items.Add(player.Name);
-                }
-            }
-    
-        }
-
-        private void listBoxPlayer_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if(listBoxTeam.SelectedItem != null)
-            {
-                listBoxScore.Items.Clear();
-                foreach (Score score in getPlayerSelected().Scores)
-                {
-                    listBoxScore.Items.Add(score.Mod + " " + score.Point);
-                }
-            }
-            
-        }
-
         private void AddTeam_Click(object sender, EventArgs e)
         {
             
@@ -97,6 +71,30 @@ namespace osu_tournament_management
         private void AddScore_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void listBoxTeam_SelectedValueChanged(object sender, EventArgs e)
+        {
+            if (listBoxTeam.SelectedItem != null)
+            {
+                listBoxPlayer.Items.Clear();
+                foreach (Player player in getTeamSelected().Players)
+                {
+                    listBoxPlayer.Items.Add(player.Name);
+                }
+            }
+        }
+
+        private void listBoxPlayer_SelectedValueChanged(object sender, EventArgs e)
+        {
+            if (listBoxPlayer.SelectedItem != null)
+            {
+                listBoxScore.Items.Clear();
+                foreach (Score score in getPlayerSelected().Scores)
+                {
+                    listBoxScore.Items.Add(score.Mod + " " + score.Point);
+                }
+            }
         }
     }
 }

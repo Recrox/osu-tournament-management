@@ -54,7 +54,7 @@
             this.listBoxTeam.Name = "listBoxTeam";
             this.listBoxTeam.Size = new System.Drawing.Size(207, 394);
             this.listBoxTeam.TabIndex = 1;
-            this.listBoxTeam.SelectedIndexChanged += new System.EventHandler(this.listBoxTeam_SelectedIndexChanged);
+            this.listBoxTeam.SelectedValueChanged += new System.EventHandler(this.listBoxTeam_SelectedValueChanged);
             // 
             // listBoxPlayer
             // 
@@ -63,7 +63,7 @@
             this.listBoxPlayer.Name = "listBoxPlayer";
             this.listBoxPlayer.Size = new System.Drawing.Size(207, 394);
             this.listBoxPlayer.TabIndex = 2;
-            this.listBoxPlayer.SelectedIndexChanged += new System.EventHandler(this.listBoxPlayer_SelectedIndexChanged);
+            this.listBoxPlayer.SelectedValueChanged += new System.EventHandler(this.listBoxPlayer_SelectedValueChanged);
             // 
             // listBoxScore
             // 
