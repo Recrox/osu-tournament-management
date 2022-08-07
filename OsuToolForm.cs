@@ -33,7 +33,7 @@ namespace osu_tournament_management
                     Teams[i].AddPlayer("Joueur num " + j + " " + i);
                     for (int k = 0; k < 10; k++)
                     {
-                        Teams[i].Players[j].AddScore("NM" + k + " " + j + " " + i, k * 100000);
+                        Teams[i].Players[j].AddScore("NM" + k + " |", k * 100000);
                     }
                 }
             }       
@@ -59,18 +59,18 @@ namespace osu_tournament_management
         {
             return getTeamSelected().Players.ElementAt(listBoxPlayer.SelectedIndex);
         }
-        private void AddTeam_Click(object sender, EventArgs e)
+        public void AddTeam_Click(object sender, EventArgs e)
         {
-            new AddDataForm().ShowDialog();
+            new AddTeamForm(this.Teams).ShowDialog();
         }
 
         private void AddPlayer_Click(object sender, EventArgs e)
         {
-            new AddDataForm().ShowDialog();
+            new AddTeamForm().ShowDialog();
         }
         private void AddScore_Click(object sender, EventArgs e)
         {
-            new AddDataForm().ShowDialog();
+            new AddTeamForm().ShowDialog();
         }
 
         private void listBoxTeam_SelectedValueChanged(object sender, EventArgs e)
